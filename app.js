@@ -1,6 +1,7 @@
 import express from "express";
-import * as CONFIG from "./config/config.js";
+import CONFIG from "./config/config.js";
 import userRouter from "./routes/user.routes.js";
+import connectToDb from "./database/connection.js";
 
 const app = express();
 
@@ -9,15 +10,22 @@ const app = express();
 app.use(express.json());
 app.use("/user", userRouter);
 
-
 app.get("/", (req, res) => {
-    res.status(200).json({ message: "Welcome to home route, server is running successfully" });
+  res
+    .status(200)
+    .json({ message: "Welcome to home route, server is running successfully" });
 });
 
 app.all("*", (req, res) => {
   res.status(404).json({ message: "Page not found" });
 });
 
-app.listen(CONFIG.PORT, () => {
-    console.log(`Server running at http://${CONFIG.LOCAL_HOST}:${CONFIG.PORT}/`);
-})
+// Connect to Mongodb Database
+connectToDb().then(() => {
+  console.log("Connected to MongoDB");
+  app.listen(CONFIG.PORT, () => {
+    console.log(
+      `Server running at http://${CONFIG.LOCAL_HOST}:${CONFIG.PORT}/`
+    );
+  });
+});
