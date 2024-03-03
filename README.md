@@ -15,7 +15,7 @@ Express\
 Dotenv\
 Bycrpt\
 Mongoose\
-Mongodb\
+Mongodb
 
 
 ### Installing
