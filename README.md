@@ -1,6 +1,6 @@
 # FINTECH WEB APPLICATION
 
-This application is designed to empower users with intuitive financial management tools, enabling them to efficiently manage their finances, make informed decisions, and achieve their financial goals. Whether you're an individual, a small business owner, or a financial advisor, our platform provides a comprehensive suite of features to cater to your financial needs.
+This application is designed to empower users with intuitive financial management tools, enabling them to efficiently manage their finances, make informed decisions, and achieve their financial goals. Whether you're an individual, a small business owner, or a financial advisor, the platform provides a comprehensive suite of features to cater to your financial needs.
 
 ## Getting Started
 
@@ -13,7 +13,7 @@ A computer and an internet connection
 ### Dependencies
 Express\
 Dotenv\
-Bycrpt\
+Bycrypt\
 Mongoose\
 Mongodb
 
