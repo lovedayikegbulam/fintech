@@ -12,7 +12,11 @@ A computer and an internet connection
 
 ### Dependencies
 Express\
-Dotenv
+Dotenv\
+Bycrpt\
+Mongoose\
+Mongodb\
+
 
 ### Installing
 
