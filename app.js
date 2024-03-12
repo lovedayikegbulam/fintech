@@ -6,7 +6,7 @@ import connectToDb from "./database/connection.js";
 const app = express();
 
 
-// middleware
+// middleware 
 app.use(express.json());
 app.use("/user", userRouter);
 
