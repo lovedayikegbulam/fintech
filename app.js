@@ -4,20 +4,17 @@ import userRouter from "./routes/user.routes.js";
 import connectToDb from "./database/connection.js";
 
 const app = express();
-
-
-// middleware 
 app.use(express.json());
-app.use("/user", userRouter);
 
-app.get("/", (req, res) => {
-  res
-    .status(200)
-    .json({ message: "Welcome to home route, server is running successfully" });
-});
+// Routes
+app.use("/auth", authRoute);
 
+// catch all route
 app.all("*", (req, res) => {
-  res.status(404).json({ message: "Page not found" });
+  res.status(404);
+  res.json({
+    message: "Not found",
+  });
 });
 
 // Connect to Mongodb Database
