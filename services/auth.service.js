@@ -48,7 +48,7 @@ export const register = async (name, email, password) => {
   });
   await newUser.save();
 
-  delete newUser.password;
+//delete newUser.password;
   return {
     message: "User created successfully",
     data: {
